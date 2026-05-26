@@ -1,9 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* Configuración Base */
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    overflow: hidden; /* Evita doble scrollbar al usar scroll snap */
+    margin: 0;
+    padding: 0;
+    background-color: #0F172A;
+    color: #334155;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* MOBILE: allow normal document scroll */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 h1, h2, h3, .font-serif {
@@ -14,64 +32,80 @@ code, .font-mono {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Contenedor Principal de Presentación */
-.presentation-container {
-    height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+/* ============================================
+   NAVBAR
+   ============================================ */
+#main-nav {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s,
+                border-color 0.3s;
+    will-change: transform;
 }
 
-/* Diapositivas Individuales */
+/* ============================================
+   PRESENTATION CONTAINER — DESKTOP ONLY
+   ============================================ */
+@media (min-width: 1025px) {
+    body {
+        overflow: hidden;
+    }
+
+    .presentation-container {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .slide-section {
+        height: 100vh;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+}
+
+/* ============================================
+   SLIDE SECTIONS — MOBILE FIRST
+   ============================================ */
+.presentation-container {
+    /* Mobile: normal flow */
+    width: 100%;
+}
+
 .slide-section {
-    height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 2rem 2rem 2rem; /* Aumentado padding superior para evitar solapamientos del header */
+    overflow: hidden;
+
+    /* Mobile padding */
+    padding: 5rem 1rem 3rem 1rem;
+    min-height: 100svh; /* safe viewport height for mobile browsers */
 }
 
-/* Transición suave para ocultar/mostrar navbar */
-#main-nav {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, border-color 0.3s;
-}
-
-/* Responsive: Deshabilitar scroll snap en móviles para evitar recortar textos largos */
-@media (max-width: 1024px) {
-    html, body {
-        overflow-y: auto !important;
-        height: auto !important;
-    }
-    .presentation-container {
-        scroll-snap-type: none;
-        height: auto;
-        overflow-y: visible;
-    }
+/* Tablet & Desktop padding */
+@media (min-width: 640px) {
     .slide-section {
-        height: auto;
-        min-height: 100vh;
-        scroll-snap-align: none;
-        padding: 6rem 1rem 4rem 1rem;
-    }
-    .animate-slide-in {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
-    .nav-dots {
-        display: none !important;
+        padding: 6rem 1.5rem 3rem 1.5rem;
     }
 }
 
-/* Indicadores de Diapositiva Laterales */
+@media (min-width: 1025px) {
+    .slide-section {
+        height: 100vh;
+        min-height: unset;
+        padding: 6rem 2rem 2rem 2rem;
+    }
+}
+
+/* ============================================
+   NAV DOTS — Desktop only
+   ============================================ */
 .nav-dots {
     position: fixed;
-    right: 2rem;
+    right: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -80,11 +114,18 @@ code, .font-mono {
     z-index: 100;
 }
 
+/* Hide on mobile/tablet */
+@media (max-width: 1024px) {
+    .nav-dots {
+        display: none !important;
+    }
+}
+
 .nav-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgba(148, 163, 184, 0.4); /* Slate 400 */
+    background-color: rgba(148, 163, 184, 0.4);
     border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -96,13 +137,12 @@ code, .font-mono {
 }
 
 .nav-dot.active {
-    background-color: #059669; /* Emerald 600 */
+    background-color: #059669;
     border-color: #ffffff;
     box-shadow: 0 0 10px rgba(5, 150, 105, 0.6);
     transform: scale(1.4);
 }
 
-/* Ajustes de puntos de navegación sobre fondo claro */
 .nav-dots.light-theme .nav-dot {
     background-color: rgba(15, 23, 42, 0.3);
 }
@@ -112,12 +152,14 @@ code, .font-mono {
 }
 
 .nav-dots.light-theme .nav-dot.active {
-    background-color: #1e3a8a; /* Blue 900 */
+    background-color: #1e3a8a;
     border-color: #0f172a;
     box-shadow: 0 0 10px rgba(30, 58, 138, 0.4);
 }
 
-/* Efectos de Fondos Gradientes */
+/* ============================================
+   BACKGROUND GRADIENTS
+   ============================================ */
 .bg-radial-dark {
     background: radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.2) 0%, rgba(15, 23, 42, 1) 80%);
 }
@@ -130,7 +172,9 @@ code, .font-mono {
     background: radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.1) 0%, rgba(15, 23, 42, 1) 80%);
 }
 
-/* Efecto Glassmorphic Premium */
+/* ============================================
+   GLASSMORPHISM CARDS
+   ============================================ */
 .glass-card-dark {
     background: rgba(30, 41, 59, 0.45);
     backdrop-filter: blur(16px);
@@ -145,15 +189,20 @@ code, .font-mono {
     border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-/* Patrón de Cubos Sutil */
+/* ============================================
+   CUBE PATTERN
+   ============================================ */
 .bg-cubes {
     background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
     background-repeat: repeat;
 }
 
-/* Estilos de Pestañas de Roles (Tabs) */
+/* ============================================
+   TABS
+   ============================================ */
 .tab-btn {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
 }
 
 .tab-btn.active {
@@ -168,33 +217,156 @@ code, .font-mono {
     color: #1e3a8a;
 }
 
-/* Animaciones y Transiciones de Contenido */
-.animate-slide-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* Mobile tabs: make them scrollable */
+.tabs-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 0;
+}
+.tabs-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.tabs-scroll-wrapper .flex {
+    min-width: max-content;
 }
 
-.slide-section.active-slide .animate-slide-in {
-    opacity: 1;
-    transform: translateY(0);
+/* ============================================
+   ANIMATIONS — only desktop
+   ============================================ */
+@media (min-width: 1025px) {
+    .animate-slide-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide-section.active-slide .animate-slide-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Retardos para elementos secuenciales */
+/* Mobile: always visible */
+@media (max-width: 1024px) {
+    .animate-slide-in {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Stagger delays */
 .delay-100 { transition-delay: 100ms; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
 
-/* Botones y Hover Micro-animations */
+/* ============================================
+   HOVER LIFT
+   ============================================ */
 .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+/* Only apply hover on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+    .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .dark-theme .hover-lift:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
 }
-.dark-theme .hover-lift:hover {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+
+/* ============================================
+   MOBILE SPECIFIC OVERRIDES
+   ============================================ */
+
+/* Ensure text is readable on small screens */
+@media (max-width: 480px) {
+    /* Hero section */
+    .hero-title {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Shrink section headers */
+    .section-title-lg {
+        font-size: 1.75rem !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Stat card number */
+    .stat-number {
+        font-size: 3.5rem !important;
+    }
+
+    /* Nav badge shrink */
+    .nav-logo-badge {
+        font-size: 9px !important;
+        padding: 2px 4px !important;
+    }
+}
+
+/* Medium mobile */
+@media (min-width: 481px) and (max-width: 639px) {
+    .hero-title {
+        font-size: 2.8rem !important;
+    }
+}
+
+/* Prevent horizontal overflow everywhere */
+img, video, iframe, table {
+    max-width: 100%;
+}
+
+/* ============================================
+   TECH GRID RESPONSIVE
+   ============================================ */
+.tech-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ============================================
+   SUBSCRIPTION CARDS
+   ============================================ */
+.subscription-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .subscription-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .subscription-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ============================================
+   MOBILE NAV
+   ============================================ */
+@media (max-width: 480px) {
+    #main-nav .nav-title-text {
+        display: none;
+    }
 }
