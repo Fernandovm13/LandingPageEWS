@@ -684,7 +684,7 @@
                                 <!-- Desarrollo Core -->
                                 <div>
                                     <span class="font-bold text-xs text-academic-blue uppercase tracking-widest block mb-3 font-mono">Desarrollo Core</span>
-                                    <div class="grid grid-cols-3 gap-3">
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                         <div class="flex items-center gap-2 bg-slate-50 border border-academic-border p-2 rounded-2xl shadow-sm hover-lift">
                                             <i class="devicon-flutter-plain text-2xl colored shrink-0"></i>
                                             <div>
@@ -699,7 +699,7 @@
                                                 <div class="text-[9px] text-slate-400">API Rest</div>
                                             </div>
                                         </div>
-                                        <div class="flex items-center gap-2 bg-slate-50 border border-academic-border p-2 rounded-2xl shadow-sm hover-lift">
+                                        <div class="flex items-center gap-2 bg-slate-50 border border-academic-border p-2 rounded-2xl shadow-sm hover-lift col-span-2 sm:col-span-1">
                                             <i class="devicon-postgresql-plain text-2xl colored shrink-0"></i>
                                             <div>
                                                 <div class="text-xs font-bold text-academic-dark font-mono">Postgres</div>
@@ -712,7 +712,7 @@
                                 <!-- Infraestructura y DevOps -->
                                 <div>
                                     <span class="font-bold text-xs text-academic-blue uppercase tracking-widest block mb-3 font-mono">Infraestructura & DevOps</span>
-                                    <div class="grid grid-cols-3 gap-3">
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                         <div class="flex items-center gap-2 bg-slate-50 border border-academic-border p-2 rounded-2xl shadow-sm hover-lift">
                                             <i class="devicon-github-original colored text-2xl shrink-0"></i>
                                             <div>
@@ -727,7 +727,7 @@
                                                 <div class="text-[9px] text-slate-400">Nube</div>
                                             </div>
                                         </div>
-                                        <div class="flex items-center gap-2 bg-slate-50 border border-academic-border p-2 rounded-2xl shadow-sm hover-lift">
+                                        <div class="flex items-center gap-2 bg-slate-50 border border-academic-border p-2 rounded-2xl shadow-sm hover-lift col-span-2 sm:col-span-1">
                                             <i class="devicon-google-plain colored text-2xl shrink-0"></i>
                                             <div>
                                                 <div class="text-xs font-bold text-academic-dark font-mono leading-tight">Google Cloud</div>
@@ -854,8 +854,7 @@
         let lastScrollTop = 0;
 
         // Mostrar/Ocultar navbar dinámicamente al hacer scroll
-        container.addEventListener('scroll', () => {
-            let scrollTop = container.scrollTop;
+        const handleScroll = (scrollTop) => {
             if (scrollTop > lastScrollTop && scrollTop > 80) {
                 // Scroll hacia abajo - ocultar navbar
                 navbar.style.transform = 'translateY(-100%)';
@@ -864,6 +863,16 @@
                 navbar.style.transform = 'translateY(0)';
             }
             lastScrollTop = scrollTop;
+        };
+
+        container.addEventListener('scroll', () => {
+            handleScroll(container.scrollTop);
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 1024) {
+                handleScroll(window.scrollY);
+            }
         });
 
         // Función para mover el scroll a un slide específico
@@ -881,9 +890,10 @@
         });
 
         // Configurar IntersectionObserver para detectar qué diapositiva está visible
+        const isDesktop = window.innerWidth > 1024;
         const observerOptions = {
-            root: container,
-            threshold: 0.5 // Se activa cuando al menos el 50% de la diapositiva entra en pantalla
+            root: isDesktop ? container : null,
+            threshold: isDesktop ? 0.5 : 0.2 // Umbral más bajo en móviles para mayor sensibilidad
         };
 
         const observer = new IntersectionObserver((entries) => {
