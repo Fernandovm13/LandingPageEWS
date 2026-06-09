@@ -1,11 +1,10 @@
-<!-- EWS Landing Page - Updated 2026-05-26T12:35 -->
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>EWS — Early Warning System</title>
-    <meta name="description" content="Sistema inteligente basado en IA que identifica estudiantes en riesgo académico y permite intervenir a tiempo. Más prevención. Más retención. Más éxito estudiantil.">
+    <title>PatrimonIA — Narrador Cultural Inteligente</title>
+    <meta name="description" content="PatrimonIA / CulturIA: Plataforma Inteligente para la Preservación y Difusión del Patrimonio Cultural Local usando Machine Learning, Deep Learning y NLP.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,13 +20,18 @@
             theme: {
                 extend: {
                     colors: {
-                        academic: {
-                            dark: '#0F172A',
-                            blue: '#1E3A8A',
-                            light: '#F8FAFC',
-                            accent: '#059669',
-                            border: '#E2E8F0',
-                            text: '#334155'
+                        cultural: {
+                            dark: '#1a100e',
+                            brown: '#3E2723',
+                            gold: '#FBC02D',
+                            amber: '#FFA000',
+                            orange: '#E65100',
+                            cream: '#FAF6F0',
+                            beige: '#FFF3E0',
+                            textDark: '#3E2723',
+                            textLight: '#ffd8c7',
+                            borderDark: 'rgba(255, 216, 199, 0.15)',
+                            borderLight: 'rgba(62, 39, 35, 0.12)'
                         }
                     }
                 }
@@ -35,29 +39,27 @@
         }
     </script>
 </head>
-<body class="bg-academic-dark text-academic-text antialiased">
+<body class="bg-cultural-dark text-cultural-textLight antialiased">
 
     <!-- ==================== NAVBAR ==================== -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-academic-dark/80 backdrop-blur-md border-b border-white/5" id="main-nav">
+    <nav class="fixed top-0 left-0 w-full z-50 bg-cultural-dark/95 backdrop-blur-md border-b border-cultural-borderDark" id="main-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center h-14 sm:h-16">
-                <!-- Logo -->
-                <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-                    <div class="w-7 h-7 bg-academic-accent text-white rounded flex items-center justify-center font-bold font-mono text-[9px] sm:text-xs shadow-md shrink-0 nav-logo-badge">
-                        EWS
-                    </div>
-                    <span class="font-semibold text-white tracking-wider text-xs sm:text-sm font-mono truncate nav-title-text">
-                        EARLY WARNING SYSTEM
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo & Brand -->
+                <div class="flex items-center gap-3 min-w-0">
+                    <img src="Logo.png" alt="CulturIA Logo" class="h-10 w-auto object-contain bg-transparent rounded-full shadow-md">
+                    <span class="font-bold text-white tracking-widest text-sm sm:text-base md:text-lg font-display truncate">
+                        PatrimonIA <span class="text-cultural-gold text-xs font-mono">CulturIA</span>
                     </span>
                 </div>
 
                 <!-- CTA -->
-                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-                    <a href="#slide-cierre"
+                <div class="flex items-center gap-2 shrink-0">
+                    <a href="#slide-equipo"
                        onclick="scrollToSlide(8); return false;"
-                       class="text-xs font-mono font-bold text-white bg-academic-accent hover:bg-emerald-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 shadow-sm whitespace-nowrap"
+                       class="text-[10px] sm:text-xs font-bold text-cultural-dark bg-cultural-gold hover:bg-cultural-amber px-3 sm:px-4 py-2 rounded-full transition-all duration-300 shadow-md pulse-amber"
                        id="nav-cta">
-                        Solicitar Demo
+                        Equipo & Defensa
                     </a>
                 </div>
             </div>
@@ -66,731 +68,570 @@
 
     <!-- ==================== NAV DOTS (Desktop only) ==================== -->
     <div id="nav-dots" class="nav-dots">
-        <div class="nav-dot active" data-slide="0" title="Portada"></div>
-        <div class="nav-dot" data-slide="1" title="Planteamiento del Problema"></div>
-        <div class="nav-dot" data-slide="2" title="Propuesta de Solución"></div>
-        <div class="nav-dot" data-slide="3" title="¿Cómo Funciona?"></div>
-        <div class="nav-dot" data-slide="4" title="Usuarios del Sistema"></div>
-        <div class="nav-dot" data-slide="5" title="Alcances del Proyecto"></div>
-        <div class="nav-dot" data-slide="6" title="Beneficios"></div>
-        <div class="nav-dot" data-slide="7" title="Tecnología e Ingresos"></div>
-        <div class="nav-dot" data-slide="8" title="Ética y Cierre"></div>
+        <div class="nav-dot active" data-slide="0" title="Inicio"></div>
+        <div class="nav-dot" data-slide="1" title="Problemática"></div>
+        <div class="nav-dot" data-slide="2" title="Justificación"></div>
+        <div class="nav-dot" data-slide="3" title="Objetivos"></div>
+        <div class="nav-dot" data-slide="4" title="Funcionalidades"></div>
+        <div class="nav-dot" data-slide="5" title="Tecnologías"></div>
+        <div class="nav-dot" data-slide="6" title="Alcances y Límites"></div>
+        <div class="nav-dot" data-slide="7" title="Modelo de Negocio"></div>
+        <div class="nav-dot" data-slide="8" title="Equipo de Trabajo"></div>
     </div>
 
     <!-- ==================== MAIN PRESENTATION ==================== -->
     <main class="presentation-container" id="presentation-container">
 
-        <!-- ===== SLIDE 1: HERO ===== -->
+        <!-- ===== SLIDE 1: PORTADA / HERO ===== -->
         <section id="slide-hero" class="slide-section bg-radial-dark text-white active-slide">
-            <div class="absolute inset-0 bg-cubes opacity-5 pointer-events-none"></div>
-            <div class="max-w-4xl mx-auto w-full relative z-10 text-center animate-slide-in px-2">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-accent/15 border border-academic-accent/30 text-academic-accent text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-5 sm:mb-8">
-                    Inteligencia Artificial Educativa
+            <div class="absolute inset-0 bg-cultural-pattern pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto w-full relative z-10 text-center px-4">
+                
+                <span class="inline-block py-1 px-4 rounded-full bg-cultural-orange/20 border border-cultural-orange/45 text-cultural-gold text-xs font-semibold tracking-widest uppercase mb-6">
+                    Proyecto Integrador — Exposición Oficial
                 </span>
 
-                <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight text-white font-serif">
-                    Early Warning System
-                </h1>
-
-                <p class="text-base sm:text-xl md:text-2xl text-academic-accent font-semibold mb-4 sm:mb-6 tracking-wide font-sans px-2">
-                    Detectamos el riesgo antes del abandono escolar
-                </p>
-
-                <p class="text-sm sm:text-base md:text-lg text-slate-400 mb-6 sm:mb-10 leading-relaxed font-light max-w-2xl mx-auto px-2">
-                    Sistema inteligente basado en Inteligencia Artificial que identifica estudiantes en situación de riesgo académico y permite intervenir a tiempo.
-                </p>
-
-                <!-- Impact phrase -->
-                <div class="inline-block bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-3 sm:py-4 mb-6 sm:mb-10 backdrop-blur-sm mx-2">
-                    <p class="text-sm sm:text-base md:text-lg italic text-slate-200 font-serif">
-                        "Más prevención. Más retención. Más éxito estudiantil."
-                    </p>
+                <div class="mb-6 flex justify-center">
+                    <img src="Logo.png" alt="PatrimonIA Logo" class="h-28 w-auto object-contain bg-transparent rounded-full shadow-lg border border-cultural-gold/20">
                 </div>
 
+                <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-3 leading-tight tracking-tight text-cultural-gold font-display">
+                    PatrimonIA
+                </h1>
+
+                <p class="text-base sm:text-xl md:text-2xl text-cultural-cream font-medium mb-6 font-display max-w-3xl mx-auto leading-relaxed">
+                    Narrador Cultural Inteligente de Patrimonio Intangible, Tradiciones, Leyendas e Historia Viva de las Comunidades
+                </p>
+
+                <p class="text-xs sm:text-sm md:text-base text-cultural-textLight/70 mb-8 leading-relaxed max-w-2xl mx-auto font-light">
+                    Propuesta tecnológica para recopilar y organizar testimonios de la memoria colectiva mediante Inteligencia Artificial local y georreferenciación.
+                </p>
+
                 <!-- Scroll down button -->
-                <div class="mt-2">
-                    <button onclick="scrollToSlide(1)" class="text-slate-400 hover:text-white transition-colors duration-300 focus:outline-none flex flex-col items-center mx-auto">
-                        <p class="text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-2">Comenzar presentación</p>
-                        <i class="fa-solid fa-chevron-down text-base sm:text-lg animate-bounce"></i>
+                <div class="mt-4">
+                    <button onclick="scrollToSlide(1)" class="text-cultural-gold/70 hover:text-cultural-gold transition-colors duration-300 flex flex-col items-center mx-auto focus:outline-none">
+                        <span class="text-[10px] font-mono tracking-widest uppercase mb-2">Comenzar Defensa</span>
+                        <i class="fa-solid fa-chevron-down text-lg animate-bounce"></i>
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- ===== SLIDE 2: PROBLEMA ===== -->
-        <section id="slide-problema" class="slide-section bg-radial-light text-academic-text light-theme">
-            <div class="max-w-6xl mx-auto w-full relative z-10 animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-blue/10 border border-academic-blue/20 text-academic-blue text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
+        <!-- ===== SLIDE 2: PROBLEMÁTICA ===== -->
+        <section id="slide-problematica" class="slide-section bg-radial-light text-cultural-textDark light-theme">
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/10 border border-cultural-orange/20 text-cultural-orange text-xs font-semibold tracking-widest uppercase mb-4">
                     02. El Desafío
                 </span>
 
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-academic-dark mb-6 sm:mb-10 font-serif">
-                    Planteamiento del Problema
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-brown mb-6 font-display">
+                    Problemática
                 </h2>
 
-                <!-- Responsive grid: stacks on mobile -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-stretch">
-
-                    <!-- Stat card -->
-                    <div class="lg:col-span-5 flex flex-col justify-between bg-white border border-academic-border p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm hover-lift">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- Left Stats -->
+                    <div class="lg:col-span-5 flex flex-col justify-between bg-white border border-cultural-borderLight p-6 sm:p-8 rounded-3xl shadow-sm hover-lift">
                         <div>
-                            <span class="text-xs sm:text-sm font-semibold text-red-500 font-mono uppercase tracking-wider">Estadística Crítica</span>
-                            <div class="stat-number text-5xl sm:text-6xl md:text-7xl font-bold text-academic-dark my-3 sm:my-4 font-serif">+30%</div>
-                            <p class="text-sm sm:text-base text-academic-text font-medium leading-relaxed">
-                                de los estudiantes universitarios en México no concluyen sus estudios profesionales.
+                            <span class="text-xs font-bold text-cultural-orange uppercase tracking-wider font-mono">Pérdida de la Memoria Oral</span>
+                            <div class="text-3xl sm:text-4xl font-extrabold text-cultural-brown my-4 font-display">
+                                Transmisión Oral
+                            </div>
+                            <p class="text-sm sm:text-base text-cultural-brown/90 leading-relaxed">
+                                Gran parte de la información patrimonial se transmite únicamente de forma oral. Esto provoca que con el paso del tiempo se pierda, se distorsione o no quede registrada de manera organizada.
                             </p>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-slate-100 text-[10px] sm:text-xs text-slate-400 font-mono">
-                            Fuente: Estadísticas Educativas Nacionales
                         </div>
                     </div>
 
-                    <!-- Details card -->
-                    <div class="lg:col-span-7 glass-card-light p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between">
-                        <div>
-                            <p class="text-sm sm:text-base md:text-lg text-academic-dark font-medium mb-4 sm:mb-6 leading-relaxed">
-                                Los estudiantes presentan señales de riesgo semanas o meses antes de abandonar sus estudios de forma definitiva.
+                    <!-- Right Description -->
+                    <div class="lg:col-span-7 glass-card-light p-6 sm:p-8 rounded-3xl flex flex-col justify-between">
+                        <div class="space-y-4 text-sm sm:text-base text-cultural-brown/85 leading-relaxed">
+                            <p>
+                                En muchas comunidades existe un patrimonio cultural intangible muy valioso, como tradiciones, leyendas, historia local, lengua, costumbres y festividades.
                             </p>
-
-                            <h4 class="text-xs font-bold text-academic-blue uppercase tracking-widest mb-3 sm:mb-4">Limitaciones del Sistema Actual:</h4>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <li class="flex items-start gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-eye-slash"></i></span>
-                                    <span class="text-xs sm:text-sm text-slate-600">Observación manual e intuitiva de docentes.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-clock-rotate-left"></i></span>
-                                    <span class="text-xs sm:text-sm text-slate-600">Reportes tardíos y burocráticos.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-triangle-exclamation"></i></span>
-                                    <span class="text-xs sm:text-sm text-slate-600">Procesos enteramente reactivos.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs shrink-0 mt-0.5"><i class="fa-solid fa-user-xmark"></i></span>
-                                    <span class="text-xs sm:text-sm text-slate-600">Falta de seguimiento personalizado.</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Consequences -->
-                        <div class="mt-5 sm:mt-8 pt-4 sm:pt-6 border-t border-academic-border">
-                            <h4 class="text-xs font-bold text-academic-dark mb-2 sm:mb-3">Consecuencias Directas:</h4>
-                            <div class="flex flex-wrap gap-1.5 sm:gap-2">
-                                <span class="text-[10px] sm:text-xs bg-slate-200/80 text-academic-dark font-medium px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full">Bajo rendimiento</span>
-                                <span class="text-[10px] sm:text-xs bg-slate-200/80 text-academic-dark font-medium px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full">Deserción estudiantil</span>
-                                <span class="text-[10px] sm:text-xs bg-slate-200/80 text-academic-dark font-medium px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full">Problemas emocionales</span>
-                                <span class="text-[10px] sm:text-xs bg-slate-200/80 text-academic-dark font-medium px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full">Baja en indicadores</span>
-                            </div>
+                            <p>
+                                Además, cuando llegan turistas o visitantes a una localidad, muchas veces no tienen a quién preguntar de forma directa y verídica sobre la cultura del lugar, por lo que obtienen información incompleta o poco confiable. A esto se suma que gran parte del conocimiento local no está disponible en formatos interactivos o accesibles para consulta rápida.
+                            </p>
+                            <p class="text-cultural-orange font-semibold">
+                                Por ello, se propone una aplicación que recopile información a partir de personas que han vivido más de 25 años en la comunidad, ya que sus testimonios pueden aportar datos más cercanos, sólidos y representativos de la identidad local.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-6 sm:mt-8 flex justify-center">
-                    <button onclick="scrollToSlide(2)" class="text-slate-500 hover:text-academic-dark transition-colors duration-300 flex items-center gap-2 text-[10px] sm:text-xs font-mono">
-                        CONOCER LA SOLUCIÓN <i class="fa-solid fa-arrow-down"></i>
+                <div class="mt-8 flex justify-center">
+                    <button onclick="scrollToSlide(2)" class="text-cultural-orange hover:text-cultural-brown transition-colors duration-300 flex items-center gap-2 text-xs font-semibold">
+                        VER JUSTIFICACIÓN <i class="fa-solid fa-arrow-down"></i>
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- ===== SLIDE 3: SOLUCIÓN ===== -->
-        <section id="slide-solucion" class="slide-section bg-radial-dark text-white">
-            <div class="max-w-6xl mx-auto w-full relative z-10 animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-accent/15 border border-academic-accent/30 text-academic-accent text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
-                    03. La Solución
+        <!-- ===== SLIDE 3: JUSTIFICACIÓN ===== -->
+        <section id="slide-justificacion" class="slide-section bg-radial-dark text-white">
+            <div class="absolute inset-0 bg-cultural-pattern pointer-events-none"></div>
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/20 border border-cultural-orange/35 text-cultural-gold text-xs font-semibold tracking-widest uppercase mb-4">
+                    03. Importancia
                 </span>
 
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 font-serif">
-                    Propuesta de Solución
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-gold mb-6 font-display">
+                    Justificación
                 </h2>
 
-                <p class="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mb-5 sm:mb-8 leading-relaxed">
-                    EWS automatiza el análisis predictivo para detectar estudiantes en riesgo a tiempo con un ecosistema integrado de Inteligencia Artificial:
-                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <!-- Column 1 -->
+                    <div class="glass-card-dark p-6 sm:p-8 rounded-3xl flex flex-col justify-between">
+                        <div class="space-y-4 text-xs sm:text-sm text-cultural-textLight/90 leading-relaxed">
+                            <p>
+                                Este proyecto es importante porque ayuda a preservar y difundir el patrimonio cultural intangible de las comunidades de una forma moderna, accesible y atractiva. En lugar de presentar grandes bloques de texto, la información se mostrará de forma breve, clara e interactiva, lo que mejora la experiencia del usuario y facilita el aprendizaje.
+                            </p>
+                            <p>
+                                También resulta útil para turistas, estudiantes y habitantes locales que desean conocer mejor la identidad cultural de una comunidad sin depender de una persona específica para obtener respuestas.
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- AI Pillars — 2 cols on mobile, 4 on desktop -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-5 sm:mb-8">
-                    <div class="bg-white/5 border border-white/10 p-3 sm:p-5 rounded-xl sm:rounded-2xl text-center hover-lift">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-academic-accent/20 text-academic-accent flex items-center justify-center mx-auto mb-2 sm:mb-3 text-base sm:text-lg">
-                            <i class="fa-solid fa-brain"></i>
+                    <!-- Column 2 -->
+                    <div class="glass-card-dark p-6 sm:p-8 rounded-3xl flex flex-col justify-between border-l-4 border-l-cultural-orange">
+                        <div class="space-y-4 text-xs sm:text-sm text-cultural-textLight/90 leading-relaxed">
+                            <p>
+                                Al utilizar testimonios de personas con amplia permanencia en el lugar, se busca que la información tenga mayor veracidad y relación directa con la realidad local.
+                            </p>
+                            <p class="text-cultural-gold font-semibold">
+                                Además, el proyecto es innovador porque prioriza el uso de tecnologías de Machine Learning, Deep Learning y NLP aplicadas al contexto cultural, sin basarse en servicios externos como funcionalidad principal.
+                            </p>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-white">Machine Learning</span>
                     </div>
-                    <div class="bg-white/5 border border-white/10 p-3 sm:p-5 rounded-xl sm:rounded-2xl text-center hover-lift">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-academic-accent/20 text-academic-accent flex items-center justify-center mx-auto mb-2 sm:mb-3 text-base sm:text-lg">
-                            <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div class="mt-8 flex justify-center">
+                    <button onclick="scrollToSlide(3)" class="text-cultural-gold hover:text-white transition-colors duration-300 flex items-center gap-2 text-xs font-semibold">
+                        VER OBJETIVOS <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 4: OBJETIVOS ===== -->
+        <section id="slide-objetivos" class="slide-section bg-radial-light text-cultural-textDark light-theme">
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/10 border border-cultural-orange/20 text-cultural-orange text-xs font-semibold tracking-widest uppercase mb-4">
+                    04. Propósitos
+                </span>
+
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-brown mb-6 font-display">
+                    Objetivos de PatrimonIA
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- General -->
+                    <div class="lg:col-span-5 bg-white border border-cultural-borderLight p-6 sm:p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-cultural-orange uppercase tracking-wider font-mono">Objetivo General</span>
+                            <p class="text-xs sm:text-sm text-cultural-brown/95 leading-relaxed mt-4">
+                                Desarrollar una aplicación móvil para Android que permita recopilar, clasificar, organizar y mostrar patrimonio cultural local mediante testimonios breves en audio o texto, utilizando modelos de Machine Learning, Deep Learning y Procesamiento de Lenguaje Natural, con información contextualizada por ubicación geográfica y sin depender de APIs externas como funcionalidad principal.
+                            </p>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-white">Análisis Predictivo</span>
                     </div>
-                    <div class="bg-white/5 border border-white/10 p-3 sm:p-5 rounded-xl sm:rounded-2xl text-center hover-lift">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-academic-accent/20 text-academic-accent flex items-center justify-center mx-auto mb-2 sm:mb-3 text-base sm:text-lg">
-                            <i class="fa-solid fa-comments"></i>
+
+                    <!-- Specific -->
+                    <div class="lg:col-span-7 glass-card-light p-6 sm:p-8 rounded-3xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-cultural-orange uppercase tracking-wider font-mono">Objetivos Específicos</span>
+                            <ul class="space-y-1.5 mt-2 text-[11px] sm:text-xs text-cultural-brown/90 font-medium">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">1.</span>
+                                    <span>Implementar un módulo de captura de testimonios en audio y texto breve para registrar información cultural de personas de la comunidad.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">2.</span>
+                                    <span>Procesar y clasificar automáticamente los testimonios en categorías como tradiciones, leyendas, historia local, lengua y festividades.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">3.</span>
+                                    <span>Asociar la información registrada a una ubicación geográfica específica para mostrar contenido relacionado con el lugar donde se encuentre el usuario.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">4.</span>
+                                    <span>Diseñar una interfaz visual basada en tarjetas informativas con contenido corto, claro e interactivo.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">5.</span>
+                                    <span>Integrar comandos de voz para consultar información almacenada en la base de datos propia del sistema.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">6.</span>
+                                    <span>Crear un calendario cultural con fechas de festividades y celebraciones locales.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">7.</span>
+                                    <span>Incorporar mini juegos educativos para reforzar el conocimiento cultural de forma interactiva.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cultural-orange">8.</span>
+                                    <span>Garantizar que la aplicación funcione principalmente con modelos propios o locales, sin usar APIs externas como parte esencial del sistema.</span>
+                                </li>
+                            </ul>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-white">NLP</span>
                     </div>
-                    <div class="bg-white/5 border border-white/10 p-3 sm:p-5 rounded-xl sm:rounded-2xl text-center hover-lift">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-academic-accent/20 text-academic-accent flex items-center justify-center mx-auto mb-2 sm:mb-3 text-base sm:text-lg">
+                </div>
+
+                <div class="mt-6 flex justify-center">
+                    <button onclick="scrollToSlide(4)" class="text-cultural-orange hover:text-cultural-brown transition-colors duration-300 flex items-center gap-2 text-xs font-semibold">
+                        VER FUNCIONALIDADES POR ROL <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 5: FUNCIONALIDADES POR TIPO DE USUARIO ===== -->
+        <section id="slide-funcionalidades" class="slide-section bg-radial-dark text-white">
+            <div class="absolute inset-0 bg-cultural-pattern pointer-events-none"></div>
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/20 border border-cultural-orange/35 text-cultural-gold text-xs font-semibold tracking-widest uppercase mb-4">
+                    05. Roles
+                </span>
+
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-gold mb-4 font-display">
+                    Funcionalidades por Tipo de Usuario
+                </h2>
+
+                <!-- Tabs -->
+                <div class="tabs-scroll-wrapper mb-6">
+                    <div class="flex border-b border-cultural-borderDark gap-1">
+                        <button onclick="switchTab('portadores')" id="btn-portadores" class="tab-btn active px-4 py-2 border-b-2 border-transparent text-xs sm:text-sm font-semibold text-cultural-textLight hover:text-cultural-gold focus:outline-none flex items-center gap-2">
+                            <i class="fa-solid fa-microphone"></i>
+                            <span>Portadores de Cultura</span>
+                        </button>
+                        <button onclick="switchTab('locales')" id="btn-locales" class="tab-btn px-4 py-2 border-b-2 border-transparent text-xs sm:text-sm font-semibold text-cultural-textLight hover:text-cultural-gold focus:outline-none flex items-center gap-2">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Usuarios Locales</span>
+                        </button>
+                        <button onclick="switchTab('turistas')" id="btn-turistas" class="tab-btn px-4 py-2 border-b-2 border-transparent text-xs sm:text-sm font-semibold text-cultural-textLight hover:text-cultural-gold focus:outline-none flex items-center gap-2">
+                            <i class="fa-solid fa-map-pin"></i>
+                            <span>Turistas o Visitantes</span>
+                        </button>
+                        <button onclick="switchTab('estudiantes')" id="btn-estudiantes" class="tab-btn px-4 py-2 border-b-2 border-transparent text-xs sm:text-sm font-semibold text-cultural-textLight hover:text-cultural-gold focus:outline-none flex items-center gap-2">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Estudiantes e Investigadores</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Content Card -->
+                <div class="glass-card-dark rounded-3xl p-6 sm:p-8 min-h-[220px] flex flex-col justify-between border border-cultural-borderDark">
+                    <!-- Portadores -->
+                    <div id="tab-content-portadores" class="tab-pane flex flex-col md:flex-row gap-6 justify-between items-center w-full">
+                        <div class="w-full">
+                            <h3 class="text-xl font-bold text-cultural-gold mb-4 font-display">Módulo de Portadores de Cultura</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Registrar testimonios mediante audio corto.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Escribir información breve en texto.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Aportar datos sobre tradiciones, leyendas, historia local y festividades.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Validar o corregir información registrada.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Locales -->
+                    <div id="tab-content-locales" class="tab-pane hidden flex flex-col md:flex-row gap-6 justify-between items-center w-full">
+                        <div class="w-full">
+                            <h3 class="text-xl font-bold text-cultural-gold mb-4 font-display">Módulo de Usuarios Locales</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Consultar contenido cultural según su ubicación.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Ver tarjetas con información breve y clara.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Escuchar respuestas por voz.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Revisar festividades próximas en el calendario cultural.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Turistas -->
+                    <div id="tab-content-turistas" class="tab-pane hidden flex flex-col md:flex-row gap-6 justify-between items-center w-full">
+                        <div class="w-full">
+                            <h3 class="text-xl font-bold text-cultural-gold mb-4 font-display">Módulo de Turistas o Visitantes</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Recibir contenido cultural contextualizado al lugar donde se encuentren.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Consultar leyendas, tradiciones, historia local y lengua.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Obtener respuestas rápidas por voz o por tarjetas informativas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Estudiantes -->
+                    <div id="tab-content-estudiantes" class="tab-pane hidden flex flex-col md:flex-row gap-6 justify-between items-center w-full">
+                        <div class="w-full">
+                            <h3 class="text-xl font-bold text-cultural-gold mb-4 font-display">Módulo de Estudiantes e Investigadores</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Explorar contenido por categorías.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Revisar registros culturales organizados.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Buscar información según localidad, tema o fecha.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cultural-orange"></i> Consultar calendarios de festividades y eventos culturales.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center">
+                    <button onclick="scrollToSlide(5)" class="text-cultural-gold hover:text-white transition-colors duration-300 flex items-center gap-2 text-xs font-semibold">
+                        VER STACK TECNOLÓGICO <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 6: TECNOLOGÍAS A APLICAR ===== -->
+        <section id="slide-tecnologias" class="slide-section bg-radial-light text-cultural-textDark light-theme">
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/10 border border-cultural-orange/20 text-cultural-orange text-xs font-semibold tracking-widest uppercase mb-4">
+                    06. Infraestructura
+                </span>
+
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-brown mb-6 font-display">
+                    Tecnologías Aplicadas
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Mobile Frontend -->
+                    <div class="bg-white border border-cultural-borderLight p-6 rounded-2xl hover-lift">
+                        <div class="text-3xl text-cultural-orange mb-3"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <h3 class="text-lg font-bold text-cultural-brown mb-3 font-display">Desarrollo Móvil</h3>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Flutter</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Dart</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Geolocator</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Geocoding</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">flutter_map</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">table_calendar</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Hive</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend / DB -->
+                    <div class="bg-white border border-cultural-borderLight p-6 rounded-2xl hover-lift">
+                        <div class="text-3xl text-cultural-orange mb-3"><i class="fa-solid fa-server"></i></div>
+                        <h3 class="text-lg font-bold text-cultural-brown mb-3 font-display">Backend & Datos</h3>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Python</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">FastAPI</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">ChromaDB</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">JWT</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Git & GitHub</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Figma</span>
+                        </div>
+                    </div>
+
+                    <!-- Machine Learning / NLP -->
+                    <div class="bg-white border border-cultural-borderLight p-6 rounded-2xl hover-lift">
+                        <div class="text-3xl text-cultural-orange mb-3"><i class="fa-solid fa-brain"></i></div>
+                        <h3 class="text-lg font-bold text-cultural-brown mb-3 font-display">Inteligencia Artificial</h3>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <span class="bg-cultural-beige px-2 py-1 rounded">TensorFlow</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Keras</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Scikit-Learn</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">spaCy</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">NLTK</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Sentence Transformers</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">Faster-Whisper</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">flutter_tts</span>
+                            <span class="bg-cultural-beige px-2 py-1 rounded">speech_to_text</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center">
+                    <button onclick="scrollToSlide(6)" class="text-cultural-orange hover:text-cultural-brown transition-colors duration-300 flex items-center gap-2 text-xs font-semibold">
+                        VER ALCANCES Y LIMITACIONES <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 7: ALCANCES Y LÍMITES ===== -->
+        <section id="slide-alcances" class="slide-section bg-radial-dark text-white">
+            <div class="absolute inset-0 bg-cultural-pattern pointer-events-none"></div>
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/20 border border-cultural-orange/35 text-cultural-gold text-xs font-semibold tracking-widest uppercase mb-4">
+                    07. Planificación
+                </span>
+
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-gold mb-6 font-display">
+                    Alcances y Limitaciones
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <!-- Alcances -->
+                    <div class="glass-card-dark p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-cultural-gold mb-3 font-display">Alcances</h3>
+                            <ul class="space-y-1.5 text-xs text-cultural-textLight/90">
+                                <li>• Registro de testimonios culturales mediante audio y texto.</li>
+                                <li>• Clasificación automática de contenido cultural.</li>
+                                <li>• Organización de información por categorías culturales.</li>
+                                <li>• Asociación de contenido con localidades específicas.</li>
+                                <li>• Consulta de información según ubicación geográfica.</li>
+                                <li>• Visualización mediante tarjetas informativas.</li>
+                                <li>• Búsquedas por texto y comandos de voz (Premium).</li>
+                                <li>• Calendario cultural con festividades y eventos locales.</li>
+                                <li>• Mini juegos educativos.</li>
+                                <li>• Disponibilidad en dispositivos Android.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Limitaciones -->
+                    <div class="glass-card-dark p-6 rounded-2xl flex flex-col justify-between border-l-4 border-l-cultural-orange">
+                        <div>
+                            <h3 class="text-lg font-bold text-cultural-orange mb-3 font-display">Limitaciones</h3>
+                            <ul class="space-y-2 text-xs text-cultural-textLight/90">
+                                <li>• La calidad de la información dependerá de los testimonios recopilados.</li>
+                                <li>• El sistema no generará información nueva.</li>
+                                <li>• La precisión de los modelos dependerá de los datos de entrenamiento.</li>
+                                <li>• La primera versión estará disponible únicamente para Android.</li>
+                                <li>• Algunas funciones avanzadas requerirán conexión a internet.</li>
+                                <li>• La cobertura cultural inicial estará limitada a las comunidades registradas.</li>
+                                <li>• El reconocimiento de voz puede verse afectado por ruido ambiental.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center">
+                    <button onclick="scrollToSlide(7)" class="text-cultural-gold hover:text-white transition-colors duration-300 flex items-center gap-2 text-xs font-semibold">
+                        VER MODELO DE NEGOCIO <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 8: MODELO DE NEGOCIO ===== -->
+        <section id="slide-negocio" class="slide-section bg-radial-light text-cultural-textDark light-theme">
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/10 border border-cultural-orange/20 text-cultural-orange text-xs font-semibold tracking-widest uppercase mb-4">
+                    08. Sostenibilidad
+                </span>
+
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-brown mb-6 font-display">
+                    Propuesta de Modelo de Negocio (Freemium)
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <!-- Freemium -->
+                    <div class="bg-white border border-cultural-borderLight p-6 sm:p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-widest font-mono">Básico / Gratis</span>
+                            <ul class="space-y-2 text-xs sm:text-sm text-cultural-brown/90 mt-4">
+                                <li>• Consulta de información cultural según ubicación.</li>
+                                <li>• Tarjetas informativas.</li>
+                                <li>• Búsquedas mediante texto.</li>
+                                <li>• Calendario cultural.</li>
+                                <li>• Mini juegos básicos.</li>
+                                <li class="text-slate-400 font-mono">• Favoritos limitados.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Premium -->
+                    <div class="bg-white border-2 border-cultural-orange p-6 sm:p-8 rounded-3xl shadow-md flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-cultural-orange uppercase tracking-widest font-mono">Premium / Suscripción</span>
+                            <ul class="space-y-2 text-xs sm:text-sm text-cultural-brown/90 mt-4 font-medium">
+                                <li>• Acceso ilimitado al contenido.</li>
+                                <li>• Consultas mediante comandos de voz.</li>
+                                <li>• Respuestas narradas por voz.</li>
+                                <li>• Descarga de contenido offline.</li>
+                                <li>• Contenido ampliado.</li>
+                                <li>• Más mini juegos.</li>
+                                <li>• Colecciones personales.</li>
+                                <li>• Favoritos ilimitados.</li>
+                                <li>• Acceso anticipado a nuevas funciones.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center">
+                    <button onclick="scrollToSlide(8)" class="text-cultural-orange hover:text-cultural-brown transition-colors duration-300 flex items-center gap-2 text-xs font-semibold">
+                        VER EQUIPO DE TRABAJO <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 9: EQUIPO DE TRABAJO Y VIABILIDAD ===== -->
+        <section id="slide-equipo" class="slide-section bg-radial-dark text-white">
+            <div class="absolute inset-0 bg-cultural-pattern pointer-events-none"></div>
+            <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-cultural-orange/20 border border-cultural-orange/35 text-cultural-gold text-xs font-semibold tracking-widest uppercase mb-4">
+                    09. Defensa del Proyecto
+                </span>
+
+                <h2 class="section-title-lg text-3xl sm:text-4xl md:text-5xl font-bold text-cultural-gold mb-6 font-display text-center">
+                    Equipo de Trabajo & Viabilidad
+                </h2>
+
+                <!-- Team Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
+                    <div class="glass-card-dark p-6 rounded-3xl text-center">
+                        <div class="w-12 h-12 rounded-full bg-cultural-gold/15 text-cultural-gold flex items-center justify-center mx-auto mb-3 text-lg">
                             <i class="fa-solid fa-user-gear"></i>
                         </div>
-                        <span class="text-xs sm:text-sm font-semibold text-white">Comportamiento</span>
+                        <h4 class="text-sm sm:text-base font-bold text-white">Fernando Vélez Méndez</h4>
+                        <p class="text-xs text-cultural-gold font-mono mt-1">Matrícula: 233422</p>
+                        <p class="text-[10px] text-cultural-textLight/60 font-mono mt-0.5">Grupo: C</p>
+                    </div>
+                    <div class="glass-card-dark p-6 rounded-3xl text-center">
+                        <div class="w-12 h-12 rounded-full bg-cultural-orange/15 text-cultural-orange flex items-center justify-center mx-auto mb-3 text-lg">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h4 class="text-sm sm:text-base font-bold text-white">Maria Fernanda Sánchez Luna</h4>
+                        <p class="text-xs text-cultural-gold font-mono mt-1">Matrícula: 231198</p>
+                        <p class="text-[10px] text-cultural-textLight/60 font-mono mt-0.5">Grupo: C</p>
+                    </div>
+                    <div class="glass-card-dark p-6 rounded-3xl text-center">
+                        <div class="w-12 h-12 rounded-full bg-cultural-gold/15 text-cultural-gold flex items-center justify-center mx-auto mb-3 text-lg">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h4 class="text-sm sm:text-base font-bold text-white">Jordi Daniel Reyes Hernández</h4>
+                        <p class="text-xs text-cultural-gold font-mono mt-1">Matrícula: 223273</p>
+                        <p class="text-[10px] text-cultural-textLight/60 font-mono mt-0.5">Grupo: D</p>
                     </div>
                 </div>
 
-                <!-- What the system does -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
-                    <h3 class="text-sm sm:text-lg font-semibold text-white mb-4 sm:mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check text-academic-accent"></i> ¿Qué realiza el sistema?
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        <div class="flex gap-3">
-                            <div class="w-6 h-6 rounded-full bg-academic-accent text-white flex items-center justify-center text-xs shrink-0 mt-0.5">✔</div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold text-white mb-1">Rendimiento Académico</h4>
-                                <p class="text-[11px] sm:text-xs text-slate-400">Analiza calificaciones y asistencia diaria de cada alumno.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-6 h-6 rounded-full bg-academic-accent text-white flex items-center justify-center text-xs shrink-0 mt-0.5">✔</div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold text-white mb-1">Análisis Conductual en LMS</h4>
-                                <p class="text-[11px] sm:text-xs text-slate-400">Detecta desmotivación por patrones de mensajes y clicks.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-6 h-6 rounded-full bg-academic-accent text-white flex items-center justify-center text-xs shrink-0 mt-0.5">✔</div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold text-white mb-1">Alertas en Tiempo Real</h4>
-                                <p class="text-[11px] sm:text-xs text-slate-400">Notificaciones automáticas al superar umbrales de riesgo.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-6 h-6 rounded-full bg-academic-accent text-white flex items-center justify-center text-xs shrink-0 mt-0.5">✔</div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold text-white mb-1">Acciones Guiadas por IA</h4>
-                                <p class="text-[11px] sm:text-xs text-slate-400">Recomienda estrategias de intervención personalizadas.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-3 sm:col-span-2">
-                            <div class="w-6 h-6 rounded-full bg-academic-accent text-white flex items-center justify-center text-xs shrink-0 mt-0.5">✔</div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold text-white mb-1">Acompañamiento Integral</h4>
-                                <p class="text-[11px] sm:text-xs text-slate-400">Canalización hacia apoyo académico y soporte emocional.</p>
-                            </div>
-                        </div>
+                <!-- Viabilidad -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-8 text-left text-xs sm:text-sm">
+                    <div class="glass-card-dark p-5 rounded-2xl">
+                        <h4 class="font-bold text-cultural-gold mb-2 font-display">Ventaja Competitiva</h4>
+                        <p class="text-cultural-textLight/90 leading-relaxed font-light">
+                            PatrimonIA combina geolocalización, Machine Learning, Deep Learning y Procesamiento de Lenguaje Natural para ofrecer información cultural contextualizada basada en testimonios reales de la comunidad.
+                        </p>
+                    </div>
+                    <div class="glass-card-dark p-5 rounded-2xl">
+                        <h4 class="font-bold text-cultural-orange mb-2 font-display">Fuentes de Ingresos</h4>
+                        <p class="text-cultural-textLight/90 leading-relaxed font-light">
+                            Los ingresos del proyecto provendrán principalmente de las suscripciones Premium, ofreciendo funcionalidades avanzadas que mejoren la experiencia de exploración cultural, aprendizaje y consulta del patrimonio local.
+                        </p>
                     </div>
                 </div>
 
-                <div class="mt-5 sm:mt-8 flex justify-center">
-                    <button onclick="scrollToSlide(3)" class="text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-2 text-[10px] sm:text-xs font-mono">
-                        VER CÓMO FUNCIONA <i class="fa-solid fa-arrow-down"></i>
+                <div>
+                    <button onclick="scrollToSlide(0)" class="bg-cultural-gold hover:bg-cultural-amber text-cultural-dark font-bold px-6 py-3 rounded-full text-xs font-mono tracking-wider transition-all duration-300 shadow-md">
+                        VOLVER AL INICIO <i class="fa-solid fa-arrow-up ml-1"></i>
                     </button>
                 </div>
-            </div>
-        </section>
-
-        <!-- ===== SLIDE 4: CÓMO FUNCIONA ===== -->
-        <section id="slide-funcionamiento" class="slide-section bg-radial-light text-academic-text light-theme">
-            <div class="max-w-6xl mx-auto w-full relative z-10 animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-blue/10 border border-academic-blue/20 text-academic-blue text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
-                    04. Proceso
-                </span>
-
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-academic-dark mb-7 sm:mb-10 font-serif text-center">
-                    ¿Cómo funciona EWS?
-                </h2>
-
-                <!-- 3-step timeline — stacks on mobile -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 relative">
-
-                    <!-- Step 1 -->
-                    <div class="bg-white border border-academic-border p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm hover-lift text-center">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-academic-blue text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-4 sm:mb-6 shadow-md">1</div>
-                        <h3 class="text-base sm:text-lg font-bold text-academic-dark mb-2 sm:mb-3">Recolección de Datos</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4 leading-relaxed">Integración de variables clave del estudiante:</p>
-                        <div class="flex flex-col gap-1.5 sm:gap-2">
-                            <span class="text-[11px] sm:text-xs bg-slate-100 py-1.5 rounded-lg text-academic-dark font-medium">Calificaciones y notas</span>
-                            <span class="text-[11px] sm:text-xs bg-slate-100 py-1.5 rounded-lg text-academic-dark font-medium">Asistencia a clases</span>
-                            <span class="text-[11px] sm:text-xs bg-slate-100 py-1.5 rounded-lg text-academic-dark font-medium">Participación en LMS</span>
-                            <span class="text-[11px] sm:text-xs bg-slate-100 py-1.5 rounded-lg text-academic-dark font-medium">Actividad general</span>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="bg-white border border-academic-border p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm hover-lift text-center">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-academic-accent text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-4 sm:mb-6 shadow-md">2</div>
-                        <h3 class="text-base sm:text-lg font-bold text-academic-dark mb-2 sm:mb-3">Análisis con IA</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4 leading-relaxed">Clasificación del nivel de vulnerabilidad:</p>
-                        <div class="flex flex-col gap-1.5 sm:gap-2">
-                            <span class="text-xs bg-green-50 text-green-700 border border-green-200 py-1.5 rounded-lg font-semibold flex items-center justify-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> Riesgo Bajo
-                            </span>
-                            <span class="text-xs bg-amber-50 text-amber-700 border border-amber-200 py-1.5 rounded-lg font-semibold flex items-center justify-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Riesgo Medio
-                            </span>
-                            <span class="text-xs bg-red-50 text-red-700 border border-red-200 py-1.5 rounded-lg font-semibold flex items-center justify-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Riesgo Alto
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="bg-white border border-academic-border p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm hover-lift text-center">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-indigo-900 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-4 sm:mb-6 shadow-md">3</div>
-                        <h3 class="text-base sm:text-lg font-bold text-academic-dark mb-2 sm:mb-3">Alertas Inteligentes</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 mb-4 sm:mb-6 leading-relaxed">Notificaciones automatizadas de acción proactiva:</p>
-                        <div class="text-xs bg-indigo-50/50 border border-indigo-100 p-3 sm:p-4 rounded-xl text-left text-slate-600">
-                            <p class="font-medium text-academic-blue mb-1"><i class="fa-solid fa-bell"></i> Flujo bidireccional:</p>
-                            Profesores y estudiantes reciben avisos simultáneos con guías de acción recomendadas.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-7 sm:mt-10 flex justify-center">
-                    <button onclick="scrollToSlide(4)" class="text-slate-500 hover:text-academic-dark transition-colors duration-300 flex items-center gap-2 text-[10px] sm:text-xs font-mono">
-                        VER INTERFACES DE USUARIO <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== SLIDE 5: USUARIOS ===== -->
-        <section id="slide-usuarios" class="slide-section bg-radial-dark text-white">
-            <div class="max-w-6xl mx-auto w-full relative z-10 animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-accent/15 border border-academic-accent/30 text-academic-accent text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
-                    05. Usuarios
-                </span>
-
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-6 font-serif">
-                    Una Interfaz para Cada Rol
-                </h2>
-
-                <p class="text-xs sm:text-base text-slate-400 mb-4 sm:mb-8 max-w-2xl">
-                    EWS adapta la visualización de forma inteligente según las necesidades de cada usuario:
-                </p>
-
-                <!-- Tabs — scrollable on mobile -->
-                <div class="tabs-scroll-wrapper">
-                    <div class="flex border-b border-white/10 mb-5 sm:mb-8 gap-1">
-                        <button onclick="switchTab('estudiantes')" id="btn-estudiantes" class="tab-btn active px-3 sm:px-6 py-2 sm:py-3 border-b-2 border-transparent text-xs sm:text-sm font-semibold text-slate-400 hover:text-white focus:outline-none flex items-center gap-1 sm:gap-2">
-                            <i class="fa-solid fa-user-graduate"></i>
-                            <span>Estudiantes</span>
-                        </button>
-                        <button onclick="switchTab('profesores')" id="btn-profesores" class="tab-btn px-3 sm:px-6 py-2 sm:py-3 border-b-2 border-transparent text-xs sm:text-sm font-semibold text-slate-400 hover:text-white focus:outline-none flex items-center gap-1 sm:gap-2">
-                            <i class="fa-solid fa-chalkboard-user"></i>
-                            <span>Profesores</span>
-                        </button>
-                        <button onclick="switchTab('coordinadores')" id="btn-coordinadores" class="tab-btn px-3 sm:px-6 py-2 sm:py-3 border-b-2 border-transparent text-xs sm:text-sm font-semibold text-slate-400 hover:text-white focus:outline-none flex items-center gap-1 sm:gap-2">
-                            <i class="fa-solid fa-users-gear"></i>
-                            <span>Coordinadores Académicos</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tab content -->
-                <div class="glass-card-dark rounded-2xl sm:rounded-3xl p-4 sm:p-8">
-                    <!-- Tab: Estudiantes -->
-                    <div id="tab-content-estudiantes" class="tab-pane flex flex-col sm:flex-row gap-5 sm:gap-8 justify-between items-start sm:items-center">
-                        <div class="w-full sm:w-2/3">
-                            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-4 font-serif">Panel del Estudiante</h3>
-                            <p class="text-xs sm:text-sm text-slate-400 mb-4 sm:mb-6 font-mono">Enfoque: Conciencia, autogestión y acceso inmediato a apoyo.</p>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Consultan su nivel de riesgo y factores.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Reciben recomendaciones personalizadas.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Acceden directamente a tutorías y psicólogo.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Monitorean su progreso académico.</span></li>
-                            </ul>
-                        </div>
-                        <div class="hidden sm:block w-1/3 text-center text-6xl sm:text-7xl text-academic-accent/20">
-                            <i class="fa-solid fa-user-graduate"></i>
-                        </div>
-                    </div>
-
-                    <!-- Tab: Profesores -->
-                    <div id="tab-content-profesores" class="tab-pane hidden flex-col sm:flex-row gap-5 sm:gap-8 justify-between items-start sm:items-center">
-                        <div class="w-full sm:w-2/3">
-                            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-4 font-serif">Panel del Profesor</h3>
-                            <p class="text-xs sm:text-sm text-slate-400 mb-4 sm:mb-6 font-mono">Enfoque: Alertas directas y registro ágil de soporte pedagógico.</p>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Visualizan alumnos en riesgo agrupados.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Reciben alertas automáticas críticas.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Registran intervenciones de forma rápida.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Consultan estadísticas de rendimiento grupal.</span></li>
-                            </ul>
-                        </div>
-                        <div class="hidden sm:block w-1/3 text-center text-6xl sm:text-7xl text-academic-accent/20">
-                            <i class="fa-solid fa-chalkboard-user"></i>
-                        </div>
-                    </div>
-
-                    <!-- Tab: Coordinadores -->
-                    <div id="tab-content-coordinadores" class="tab-pane hidden flex-col sm:flex-row gap-5 sm:gap-8 justify-between items-start sm:items-center">
-                        <div class="w-full sm:w-2/3">
-                            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-4 font-serif">Panel del Coordinador Académico</h3>
-                            <p class="text-xs sm:text-sm text-slate-400 mb-4 sm:mb-6 font-mono">Enfoque: Visión global y optimización de políticas de retención.</p>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Supervisan indicadores de retención global.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Detectan grupos o materias críticas.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Evalúan el impacto de estrategias aplicadas.</span></li>
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-chevron-right text-academic-accent text-sm shrink-0"></i><span class="text-xs sm:text-sm text-slate-200">Toman decisiones basadas en data masiva.</span></li>
-                            </ul>
-                        </div>
-                        <div class="hidden sm:block w-1/3 text-center text-6xl sm:text-7xl text-academic-accent/20">
-                            <i class="fa-solid fa-users-gear"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-5 sm:mt-8 flex justify-center">
-                    <button onclick="scrollToSlide(5)" class="text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-2 text-[10px] sm:text-xs font-mono">
-                        VER ALCANCES DEL PROYECTO <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== SLIDE 6: ALCANCES ===== -->
-        <section id="slide-alcance" class="slide-section bg-radial-light text-academic-text light-theme">
-            <div class="max-w-6xl mx-auto w-full relative z-10 animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-blue/10 border border-academic-blue/20 text-academic-blue text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
-                    06. Alcance
-                </span>
-
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-academic-dark mb-6 sm:mb-10 font-serif">
-                    Alcances del Proyecto
-                </h2>
-
-                <!-- 2 cols mobile, 4 cols desktop -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-
-                    <div class="bg-white border border-academic-border p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm hover-lift flex flex-col">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-academic-blue/10 text-academic-blue flex items-center justify-center text-base sm:text-lg mb-3 sm:mb-6 shadow-sm">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                        </div>
-                        <h3 class="text-sm sm:text-lg font-bold text-academic-dark mb-1 sm:mb-2">Aplicación Móvil</h3>
-                        <p class="text-[11px] sm:text-sm text-slate-500 leading-relaxed">Acceso instantáneo para estudiantes y profesores con notificaciones push.</p>
-                    </div>
-
-                    <div class="bg-white border border-academic-border p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm hover-lift flex flex-col">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-academic-blue/10 text-academic-blue flex items-center justify-center text-base sm:text-lg mb-3 sm:mb-6 shadow-sm">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <h3 class="text-sm sm:text-lg font-bold text-academic-dark mb-1 sm:mb-2">Precisión Predictiva</h3>
-                        <p class="text-[11px] sm:text-sm text-slate-500 leading-relaxed">Alta precisión algorítmica para evitar falsos positivos.</p>
-                    </div>
-
-                    <div class="bg-white border border-academic-border p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm hover-lift flex flex-col">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-academic-blue/10 text-academic-blue flex items-center justify-center text-base sm:text-lg mb-3 sm:mb-6 shadow-sm">
-                            <i class="fa-solid fa-chart-pie"></i>
-                        </div>
-                        <h3 class="text-sm sm:text-lg font-bold text-academic-dark mb-1 sm:mb-2">Dashboards</h3>
-                        <p class="text-[11px] sm:text-sm text-slate-500 leading-relaxed">Cuadros de mando analíticos personalizados por rol.</p>
-                    </div>
-
-                    <div class="bg-white border border-academic-border p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm hover-lift flex flex-col">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-academic-blue/10 text-academic-blue flex items-center justify-center text-base sm:text-lg mb-3 sm:mb-6 shadow-sm">
-                            <i class="fa-solid fa-gauge-high"></i>
-                        </div>
-                        <h3 class="text-sm sm:text-lg font-bold text-academic-dark mb-1 sm:mb-2">Tiempo Real</h3>
-                        <p class="text-[11px] sm:text-sm text-slate-500 leading-relaxed">Procesamiento ágil y alertas instantáneas al momento de detección.</p>
-                    </div>
-                </div>
-
-                <div class="mt-7 sm:mt-10 flex justify-center">
-                    <button onclick="scrollToSlide(6)" class="text-slate-500 hover:text-academic-dark transition-colors duration-300 flex items-center gap-2 text-[10px] sm:text-xs font-mono">
-                        VER BENEFICIOS CLAVE <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== SLIDE 7: BENEFICIOS ===== -->
-        <section id="slide-beneficios" class="slide-section bg-radial-dark text-white">
-            <div class="max-w-6xl mx-auto w-full relative z-10 animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-accent/15 border border-academic-accent/30 text-academic-accent text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
-                    07. Impacto
-                </span>
-
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-10 font-serif">
-                    Beneficios del Sistema
-                </h2>
-
-                <!-- 1 col mobile, 2 col tablet, 3 col desktop -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-                    <div class="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl flex gap-3 sm:gap-4 hover-lift">
-                        <span class="text-lg sm:text-2xl text-academic-accent shrink-0"><i class="fa-solid fa-arrow-trend-down"></i></span>
-                        <div>
-                            <h4 class="text-sm font-bold text-white mb-1 sm:mb-2">Reducción de Abandono</h4>
-                            <p class="text-[11px] sm:text-sm text-slate-400">Reduce la deserción escolar a través de detección automatizada oportuna.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl flex gap-3 sm:gap-4 hover-lift">
-                        <span class="text-lg sm:text-2xl text-academic-accent shrink-0"><i class="fa-solid fa-graduation-cap"></i></span>
-                        <div>
-                            <h4 class="text-sm font-bold text-white mb-1 sm:mb-2">Mejora de Retención</h4>
-                            <p class="text-[11px] sm:text-sm text-slate-400">Eleva los indicadores de retención y egreso de la institución.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl flex gap-3 sm:gap-4 hover-lift">
-                        <span class="text-lg sm:text-2xl text-academic-accent shrink-0"><i class="fa-solid fa-clock"></i></span>
-                        <div>
-                            <h4 class="text-sm font-bold text-white mb-1 sm:mb-2">Intervención Temprana</h4>
-                            <p class="text-[11px] sm:text-sm text-slate-400">Actúa semanas antes de que la decisión sea irreversible.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl flex gap-3 sm:gap-4 hover-lift">
-                        <span class="text-lg sm:text-2xl text-academic-accent shrink-0"><i class="fa-solid fa-chart-pie"></i></span>
-                        <div>
-                            <h4 class="text-sm font-bold text-white mb-1 sm:mb-2">Toma de Decisiones</h4>
-                            <p class="text-[11px] sm:text-sm text-slate-400">Métricas robustas para diseñar mejores planes de apoyo.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl flex gap-3 sm:gap-4 hover-lift">
-                        <span class="text-lg sm:text-2xl text-academic-accent shrink-0"><i class="fa-solid fa-shield-halved"></i></span>
-                        <div>
-                            <h4 class="text-sm font-bold text-white mb-1 sm:mb-2">Optimización de Recursos</h4>
-                            <p class="text-[11px] sm:text-sm text-slate-400">Canaliza tutorías y atención psicológica exactamente a quien lo necesita.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl flex gap-3 sm:gap-4 hover-lift">
-                        <span class="text-lg sm:text-2xl text-academic-accent shrink-0"><i class="fa-solid fa-users"></i></span>
-                        <div>
-                            <h4 class="text-sm font-bold text-white mb-1 sm:mb-2">Seguimiento Personalizado</h4>
-                            <p class="text-[11px] sm:text-sm text-slate-400">Acompaña a cada alumno de manera única según sus variables.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-5 sm:mt-8 flex justify-center">
-                    <button onclick="scrollToSlide(7)" class="text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-2 text-[10px] sm:text-xs font-mono">
-                        VER TECNOLOGÍA E INGRESOS <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== SLIDE 8: TECNOLOGÍA ===== -->
-        <section id="slide-tecnologia" class="slide-section bg-radial-light text-academic-text light-theme">
-            <div class="max-w-6xl mx-auto w-full relative z-10 animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-blue/10 border border-academic-blue/20 text-academic-blue text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
-                    08. Viabilidad
-                </span>
-
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-academic-dark mb-6 sm:mb-10 font-serif">
-                    Tecnología e Ingresos
-                </h2>
-
-                <!-- Stack on mobile, side by side on desktop -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8">
-
-                    <!-- Tech Stack -->
-                    <div class="lg:col-span-7 bg-white border border-academic-border p-4 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm">
-                        <h3 class="text-base sm:text-xl font-bold text-academic-dark mb-4 sm:mb-6 font-serif flex items-center gap-2">
-                            <i class="fa-solid fa-layer-group text-academic-blue"></i> Stack Tecnológico
-                        </h3>
-
-                        <div class="space-y-4 sm:space-y-6">
-                            <!-- AI -->
-                            <div>
-                                <span class="font-bold text-[10px] sm:text-xs text-academic-blue uppercase tracking-widest block mb-2 sm:mb-3 font-mono">Inteligencia Artificial</span>
-                                <div class="grid grid-cols-2 gap-2 sm:gap-3">
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <i class="devicon-python-plain text-xl sm:text-2xl colored shrink-0"></i>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">Python</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">Core IA</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <i class="devicon-tensorflow-original text-xl sm:text-2xl colored shrink-0"></i>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">TensorFlow</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">ML Models</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Frontend/Mobile -->
-                            <div>
-                                <span class="font-bold text-[10px] sm:text-xs text-academic-blue uppercase tracking-widest block mb-2 sm:mb-3 font-mono">Frontend / Móvil</span>
-                                <div class="grid grid-cols-2 gap-2 sm:gap-3">
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <i class="devicon-flutter-plain text-xl sm:text-2xl colored shrink-0"></i>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">Flutter</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">App Móvil</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <i class="devicon-react-original text-xl sm:text-2xl colored shrink-0"></i>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">React</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">Dashboard Web</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Backend / Cloud -->
-                            <div>
-                                <span class="font-bold text-[10px] sm:text-xs text-academic-blue uppercase tracking-widest block mb-2 sm:mb-3 font-mono">Backend / Infraestructura</span>
-                                <div class="grid grid-cols-2 gap-2 sm:gap-3">
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <i class="devicon-fastapi-plain text-xl sm:text-2xl colored shrink-0"></i>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">FastAPI</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">REST API</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <i class="devicon-postgresql-plain text-xl sm:text-2xl colored shrink-0"></i>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">PostgreSQL</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">Base de Datos</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <!-- GitHub Actions: custom icon -->
-                                        <svg class="w-5 h-5 sm:w-6 sm:h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="#1F2328"/>
-                                        </svg>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">GitHub Actions</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">CI/CD</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-2 sm:gap-3 bg-slate-50 border border-academic-border p-2 sm:p-2.5 rounded-xl sm:rounded-2xl hover-lift">
-                                        <!-- Google Cloud icon -->
-                                        <svg class="w-5 h-5 sm:w-6 sm:h-6 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.19 2.38a9.344 9.344 0 0 0-9.234 6.893c.053-.02-.055.013 0 0-3.875 2.551-3.922 8.11-.247 10.941l.006.005a6.79 6.79 0 0 0 4.209 1.455h5.072c.979 0 6.727.05 9.654-5.891C23.734 10.907 20.55 2.375 12.19 2.38zm4.3 13.498a3.698 3.698 0 0 1-2.703 1.109h-4.67a3.714 3.714 0 0 1-2.88-1.218 3.755 3.755 0 0 1-.851-2.826 3.75 3.75 0 0 1 1.386-2.573A3.72 3.72 0 0 1 9.168 9.7l.087-.01h.025a3.83 3.83 0 0 1 1.112.171l.024.008.027.011c.204.07.402.158.59.263l.056.033.028.015a3.88 3.88 0 0 1 .854.717l.006.009a3.69 3.69 0 0 1 .748 1.62l.006.03.004.032.008.073.006.075.003.073.002.073-.001.073-.004.074-.006.073-.009.073-.01.07-.014.068-.016.067-.018.066-.021.064-.022.061-.025.06-.028.058-.03.056-.031.053-.034.051-.036.048-.038.046-.04.044-.042.04-.044.038-.046.036-.047.033-.049.03-.051.028-.053.025-.054.022-.056.019-.057.017-.058.014-.059.011-.06.008-.062.005-.062.002-.063-.001-.063-.004-.063-.007-.064-.009-.064-.012-.064-.015-.064-.018-.064-.02-.064-.023-.064-.026-.063-.028-.063-.031-.062-.034-.061-.036-.061-.039-.06-.041-.059-.044-.057-.046-.056-.048-.055-.051-.054-.053-.052-.055-.051-.057-.049-.059-.048-.061-.046-.063-.044-.065-.043-.067-.04-.069-.039-.07-.037-.072-.035-.073-.032-.075-.03-.076-.028-.077-.025-.079-.023-.08-.02-.081-.019-.082-.016-.083-.013-.084-.011-.084-.008-.085-.006-.086-.003-.087-.001-.087V13.011l.002-.087.004-.087.007-.086.009-.086.012-.085.014-.084.017-.083.02-.082.022-.081.025-.079.027-.078.03-.077.033-.076.035-.074.038-.072.04-.071.043-.069.046-.068.048-.066.051-.064.053-.062.056-.06.059-.058.061-.057.064-.054.066-.052.069-.05.072-.047.074-.045.077-.042.079-.04.082-.037.084-.034.087-.031.089-.029.092-.026.094-.023.096-.02.099-.017.101-.014.103-.011.106-.008.108-.005.11-.001z" fill="#4285F4"/>
-                                        </svg>
-                                        <div>
-                                            <div class="text-[10px] sm:text-xs font-bold text-academic-dark font-mono">Google Cloud</div>
-                                            <div class="text-[9px] sm:text-[10px] text-slate-400">Nube & Deploy</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Monetization -->
-                    <div class="lg:col-span-5 bg-white border border-academic-border p-4 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm flex flex-col">
-                        <h3 class="text-base sm:text-xl font-bold text-academic-dark mb-3 sm:mb-6 font-serif flex items-center gap-2">
-                            <i class="fa-solid fa-sack-dollar text-academic-accent"></i> Modelo de Ingresos
-                        </h3>
-
-                        <div class="subscription-grid flex-1">
-                            <!-- Básico -->
-                            <div class="border border-academic-border rounded-xl sm:rounded-2xl p-3 sm:p-5 hover-lift flex flex-col">
-                                <div class="flex items-center gap-2 mb-2 sm:mb-3">
-                                    <span class="w-2 h-2 rounded-full bg-slate-400 shrink-0"></span>
-                                    <span class="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider font-mono">Básico</span>
-                                </div>
-                                <p class="text-[11px] sm:text-sm font-bold text-academic-dark mb-1">$299 MXN/mes</p>
-                                <p class="text-[10px] sm:text-xs text-slate-500 leading-relaxed">Monitoreo básico y alertas esenciales para grupos pequeños.</p>
-                            </div>
-
-                            <!-- Profesional -->
-                            <div class="border-2 border-academic-accent rounded-xl sm:rounded-2xl p-3 sm:p-5 bg-academic-accent/5 hover-lift flex flex-col relative">
-                                <span class="absolute -top-2 left-3 bg-academic-accent text-white text-[9px] px-2 py-0.5 rounded-full font-mono font-bold">POPULAR</span>
-                                <div class="flex items-center gap-2 mb-2 sm:mb-3">
-                                    <span class="w-2 h-2 rounded-full bg-academic-accent shrink-0"></span>
-                                    <span class="text-[10px] sm:text-xs font-bold text-academic-accent uppercase tracking-wider font-mono">Profesional</span>
-                                </div>
-                                <p class="text-[11px] sm:text-sm font-bold text-academic-dark mb-1">$799 MXN/mes</p>
-                                <p class="text-[10px] sm:text-xs text-slate-500 leading-relaxed">Dashboard completo, alertas avanzadas e informes detallados.</p>
-                            </div>
-
-                            <!-- Institucional -->
-                            <div class="border border-academic-border rounded-xl sm:rounded-2xl p-3 sm:p-5 hover-lift flex flex-col sm:col-span-2 lg:col-span-1">
-                                <div class="flex items-center gap-2 mb-2 sm:mb-3">
-                                    <span class="w-2 h-2 rounded-full bg-academic-blue shrink-0"></span>
-                                    <span class="text-[10px] sm:text-xs font-bold text-academic-blue uppercase tracking-wider font-mono">Institucional</span>
-                                </div>
-                                <p class="text-[11px] sm:text-sm font-bold text-academic-dark mb-1">Precio personalizado</p>
-                                <p class="text-[10px] sm:text-xs text-slate-500 leading-relaxed">Integración completa con el LMS, soporte 24/7 y capacitación.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-5 sm:mt-8 flex justify-center">
-                    <button onclick="scrollToSlide(8)" class="text-slate-500 hover:text-academic-dark transition-colors duration-300 flex items-center gap-2 text-[10px] sm:text-xs font-mono">
-                        VER ENFOQUE ÉTICO Y CIERRE <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== SLIDE 9: ÉTICA Y CIERRE ===== -->
-        <section id="slide-cierre" class="slide-section bg-radial-dark text-white">
-            <div class="max-w-4xl mx-auto w-full relative z-10 text-center animate-slide-in">
-
-                <span class="inline-block py-1 px-3 rounded-full bg-academic-accent/15 border border-academic-accent/30 text-academic-accent text-[10px] sm:text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
-                    09. Ética y Cierre
-                </span>
-
-                <h2 class="section-title-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-8 font-serif">
-                    Enfoque Ético
-                </h2>
-
-                <!-- Ethics box -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-10 text-left">
-                    <p class="text-sm sm:text-base text-slate-200 font-medium mb-3 sm:mb-4 text-center">
-                        EWS no busca de ninguna manera vigilar o sancionar estudiantes.
-                    </p>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs text-slate-400">
-                        <div class="flex items-center gap-2">
-                            <span class="text-academic-accent shrink-0"><i class="fa-solid fa-hand-holding-hand"></i></span>
-                            <span>Apoyo oportuno</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-academic-accent shrink-0"><i class="fa-solid fa-lock"></i></span>
-                            <span>Respeto a la privacidad</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-academic-accent shrink-0"><i class="fa-solid fa-shield-halved"></i></span>
-                            <span>Protección de datos</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-academic-accent shrink-0"><i class="fa-solid fa-user-shield"></i></span>
-                            <span>Acompañamiento guiado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Closing quote -->
-                <h3 class="text-base sm:text-xl md:text-2xl font-serif italic text-slate-300 mb-2 px-2">
-                    "Detectar problemas a tiempo puede cambiar el futuro de miles de estudiantes."
-                </h3>
-                <p class="text-[10px] sm:text-sm font-mono tracking-widest text-academic-accent uppercase mb-6 sm:mb-8">
-                    Transformando la educación con Inteligencia Artificial
-                </p>
-
-                <!-- Back to top -->
-                <button onclick="scrollToSlide(0)" class="bg-academic-accent hover:bg-emerald-700 text-white font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[10px] sm:text-xs font-mono tracking-wider transition-all duration-300 shadow-md">
-                    VOLVER AL INICIO <i class="fa-solid fa-arrow-up ml-1"></i>
-                </button>
 
                 <!-- Footer -->
-                <footer class="mt-10 sm:mt-16 pt-5 sm:pt-8 border-t border-white/5 text-slate-500 text-[10px] sm:text-xs font-mono">
-                    <p>&copy; 2026 EWS Project. Documento Oficial de Propuesta Tecnológica.</p>
-                    <p class="mt-1 text-red-400/80">Estrictamente confidencial para revisión institucional.</p>
+                <footer class="mt-8 pt-4 border-t border-cultural-borderDark text-cultural-textLight/40 text-[10px] sm:text-xs font-mono">
+                    <p>&copy; 2026 PatrimonIA. Documento Académico Oficial.</p>
                 </footer>
             </div>
         </section>
@@ -818,12 +659,12 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }
 
-        // Desktop: snap container scrolls
+        // Desktop: scroll container
         container.addEventListener('scroll', () => {
             handleScroll(container.scrollTop);
         });
 
-        // Mobile: window scrolls
+        // Mobile: window scroll
         window.addEventListener('scroll', () => {
             if (window.innerWidth <= 1024) {
                 handleScroll(window.scrollY);
@@ -842,7 +683,7 @@
             dot.addEventListener('click', () => scrollToSlide(index));
         });
 
-        /* ---------- IntersectionObserver ---------- */
+        /* ---------- Intersection Observer ---------- */
         function getObserverRoot() {
             return window.innerWidth > 1024 ? container : null;
         }
@@ -869,7 +710,6 @@
             return obs;
         }
 
-        // Recreate observer on resize (desktop <-> mobile transition)
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
@@ -881,49 +721,46 @@
 
         /* ---------- Update UI based on active slide ---------- */
         function updateUI(index) {
-            // Update active-slide class
             sections.forEach((sec, i) => {
                 sec.classList.toggle('active-slide', i === index);
             });
 
-            // Update dots
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
 
-            // Theme switch
             const isLight = sections[index].classList.contains('light-theme');
 
             if (isLight) {
                 dotsContainer.classList.add('light-theme');
-                navbar.classList.remove('bg-academic-dark/80', 'border-white/5');
-                navbar.classList.add('bg-white/90', 'border-slate-200');
-                const span = navbar.querySelector('span.nav-title-text');
-                if (span) { span.classList.remove('text-white'); span.classList.add('text-academic-dark'); }
-                navCta.classList.remove('bg-academic-accent', 'hover:bg-emerald-700');
-                navCta.classList.add('bg-academic-blue', 'hover:bg-blue-800');
+                navbar.classList.remove('bg-cultural-dark/95', 'border-cultural-borderDark');
+                navbar.classList.add('bg-white/95', 'border-cultural-borderLight');
+                const span = navbar.querySelector('span.font-display');
+                if (span) { span.classList.remove('text-white'); span.classList.add('text-cultural-brown'); }
+                navCta.classList.remove('bg-cultural-gold', 'text-cultural-dark', 'hover:bg-cultural-amber', 'pulse-amber');
+                navCta.classList.add('bg-cultural-orange', 'text-white', 'hover:bg-amber-800');
             } else {
                 dotsContainer.classList.remove('light-theme');
-                navbar.classList.remove('bg-white/90', 'border-slate-200');
-                navbar.classList.add('bg-academic-dark/80', 'border-white/5');
-                const span = navbar.querySelector('span.nav-title-text');
-                if (span) { span.classList.remove('text-academic-dark'); span.classList.add('text-white'); }
-                navCta.classList.remove('bg-academic-blue', 'hover:bg-blue-800');
-                navCta.classList.add('bg-academic-accent', 'hover:bg-emerald-700');
+                navbar.classList.remove('bg-white/95', 'border-cultural-borderLight');
+                navbar.classList.add('bg-cultural-dark/95', 'border-cultural-borderDark');
+                const span = navbar.querySelector('span.font-display');
+                if (span) { span.classList.remove('text-cultural-brown'); span.classList.add('text-white'); }
+                navCta.classList.remove('bg-cultural-orange', 'text-white', 'hover:bg-amber-800');
+                navCta.classList.add('bg-cultural-gold', 'text-cultural-dark', 'hover:bg-cultural-amber', 'pulse-amber');
             }
         }
 
-        /* ---------- Tabs ---------- */
-        function switchTab(roleId) {
+        /* ---------- Tab Switch ---------- */
+        function switchTab(tabId) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.add('hidden'));
-            document.getElementById(`btn-${roleId}`).classList.add('active');
-            const pane = document.getElementById(`tab-content-${roleId}`);
-            pane.classList.remove('hidden');
-            pane.classList.add('flex');
+            
+            document.getElementById(`btn-${tabId}`).classList.add('active');
+            const targetPane = document.getElementById(`tab-content-${tabId}`);
+            targetPane.classList.remove('hidden');
+            targetPane.classList.add('flex');
         }
 
-        /* ---------- Init first slide ---------- */
         updateUI(0);
     </script>
 </body>
